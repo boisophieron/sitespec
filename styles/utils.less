@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "librebaskerville";
+    src: url('fonts/librebaskerville-regular-webfont.eot');
+    src: url('fonts/librebaskerville-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/librebaskerville-regular-webfont.woff2') format('woff2'),
+         url('fonts/librebaskerville-regular-webfont.woff') format('woff'),
+         url('fonts/librebaskerville-regular-webfont.ttf') format('truetype'),
+         url('fonts/librebaskerville-regular-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/**** VARIABLES ****/
+
+/******** MEDIA QUERIES ********/
+
+
+// we set up width min and max for a tablet, below we load mobile query, above we use normal style
+// we use min-device-width instead of min-width to make it works on android browsers (at least GS2 on Kitkat)
+
+@md-min: 768px;
+@bg-min: 1025px;
+
+
+@sm-max: (@md-min - 1);
+@md-max: (@bg-min - 1);
+
+@phone:          ~"only screen and (max-device-width: @{sm-max})";
+@tablet:         ~"only screen and (min-device-width: @{md-min}) and (max-device-width: @{md-max})";
+@desktop:        ~"only screen and (min-device-width: @{bg-min})";
+
+// we set up breakpoints used when user resize browser wondow
+
+@small-viewport:  ~"(max-width: @{sm-max})";
+@medium-viewport: ~"(min-width: @{md-min}) and (max-width: @{md-max})";
+@big-viewport:    ~"(min-width: @{bg-min})";
+
+
+
+
+
+/******** COLORS, MARGIN, FONT-SIZES etc. ********/
+
+@W100-margin: calc(~"100% - 2 * @{big-margin}");
+@W100-margin-mobile: calc(~"100% - @{margin} / 2");
+.W100-margin {
+  width: @W100-margin; 
+  margin: 0 auto !important;
+  max-width: @Wmax;
+  position: relative;
+  display: block;
+  clear:both;
+  float: none;
+}
+
+// @HeaderH: 155px;
+@Wcaption: 290px;
+@Hcaption: 125px;
+
+
+
+@grey: #f8f8f8;
+@black: #000;
+
+@Wmax: 1280px;
+@Wmin: 500px;
+
+// ipad 1024 / 8 = 128
+
+@margin: 12px;
+@big-margin: @margin * 2;
+
+@border: 1px solid @black;
+
+@font-big: 14pt;
+@font-medium: 12pt;
+@font-small: 10pt;
+.font-big    {font-size: @font-big;}
+.font-medium {font-size: @font-medium;}
+.font-small  {font-size: @font-small;}
+
+
+/******** COLUMN SYSTEM ********/
+
+
+@col-nbr: 12;
+@col-gut-nbr: 11;
+@col-gut-width: "@{margin}";
+
+@col-base-calc: "((100% - @{col-gut-nbr} * @{col-gut-width}) / @{col-nbr})" ;
+
+@col1:  calc(~"@{col-base-calc}"); 
+@col2:  calc(~"@{col-base-calc} * 2 + (1 * @{margin})"); 
+@col3:  calc(~"@{col-base-calc} * 3 + (2 * @{margin})"); 
+@col4:  calc(~"@{col-base-calc} * 4 + (3 * @{margin})"); 
+@col5:  calc(~"@{col-base-calc} * 5 + (4 * @{margin})"); 
+@col6:  calc(~"@{col-base-calc} * 6 + (5 * @{margin})"); 
+@col7:  calc(~"@{col-base-calc} * 7 + (6 * @{margin})"); 
+@col8:  calc(~"@{col-base-calc} * 8 + (7 * @{margin})"); 
+@col9:  calc(~"@{col-base-calc} * 9 + (8 * @{margin})"); 
+@col10: calc(~"@{col-base-calc} * 10 + (9 * @{margin})"); 
+@col11: calc(~"@{col-base-calc} * 11 + (10 * @{margin})"); 
+@col12: calc(~"@{col-base-calc} * 12 + (11 * @{margin})"); 
+ 
+.col1{width: @col1;}
+.col2{width: @col2;}
+.col3{width: @col3;}
+.col4{width: @col4;}
+.col5{width: @col5;}
+.col6{width: @col6;}
+.col7{width: @col7;}
+.col8{width: @col8;}
+.col9{width: @col9;}
+.col10{width: @col10;}
+.col11{width: @col11;}
+.col12{width: @col12;}
+
+

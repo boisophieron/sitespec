@@ -1,0 +1,84 @@
+/**DEBUG**/
+// .section-header {background: #fafafa;}
+// .article	    {background: #f4f4f4;}
+// .job-infos      {background: #eeeeee;}
+// .job-legend     {background: #eaeaea;}
+
+
+
+
+
+
+/**GENERAL LESS**/
+
+body {
+	padding: @big-margin;
+	font-family: "librebaskerville";
+}
+
+
+.section-header,
+.article,
+.job-infos,
+.job-legend {
+	float: left; //we use float instead of inline-block to fight an automatic gap
+}
+
+.section-header {
+	font-size: 14pt;
+	width: 100vw;
+	padding: 36px;
+
+	.title {
+		font-size: 48pt; 
+	}
+}
+
+.article {
+	font-size: 10pt;
+	position: relative;
+
+	.job-title {
+		font-size: 18pt;
+	}
+
+	.views-wrapper {
+		width: 100%;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+		box-sizing: border-box;
+		-webkit-transform: translate3d(0, 0, 0); // webkit trick to force scroll bar to obey z-index
+
+		.view {
+			display: inline-block;
+
+			img{
+				width: auto;
+				max-width: calc(~"100vw - 6 * @{margin}");
+				max-height: calc(~"(100vw - 6 * @{margin}) / 2.3"); //adjust the divider value to adjust image format
+			}
+
+			.view-caption {
+				
+				padding: @margin / 2 0px;
+				white-space: pre-wrap;
+			    white-space: -moz-pre-wrap;
+			    white-space: -pre-wrap;
+			    white-space: -o-pre-wrap;
+			    word-wrap: break-word;
+			    font-size: 9pt;
+			}
+
+			&:last-child {
+			     .col12; // trick to make sure the last item can scroll until left side of viewport
+			}
+		}
+	}
+
+
+	.job-infos {
+		position: relative;
+	}
+
+}

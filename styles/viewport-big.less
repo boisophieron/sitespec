@@ -1,0 +1,29 @@
+
+@media @desktop, 
+@big-viewport 
+{
+	.section-header,
+	.article  {
+		.col12;
+		padding: @margin;
+	}
+
+	.view {
+		vertical-align: bottom;
+	}
+
+	.view-caption {
+		width: @Wcaption;
+		height: @Hcaption;
+		display: block; 
+	}
+
+	.job-infos {
+	 	width: calc(~"100% - @{Wcaption} - 2 * @{margin}");
+	    margin-top: -@Hcaption + 2px;
+	    min-height: @Hcaption; 
+	    float: right;
+	    background: #fff;
+	    padding: @margin;
+	}
+}
