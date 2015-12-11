@@ -136,6 +136,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/**** Fonts ****/
 @font-face {
   font-family: "librebaskerville";
   src: url('fonts/librebaskerville-regular-webfont.eot');
@@ -143,9 +144,37 @@ table {
   font-weight: normal;
   font-style: normal;
 }
-/**** VARIABLES ****/
-/******** MEDIA QUERIES ********/
-/******** COLORS, MARGIN, FONT-SIZES etc. ********/
+@font-face {
+  font-family: 'belgika-bold';
+  src: url('fonts/belgika-5th-webfont.eot');
+  src: url('fonts/belgika-5th-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/belgika-5th-webfont.woff2') format('woff2'), url('fonts/belgika-5th-webfont.woff') format('woff'), url('fonts/belgika-5th-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'belgika-regular';
+  src: url('fonts/belgika-8th-webfont.eot');
+  src: url('fonts/belgika-8th-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/belgika-8th-webfont.woff2') format('woff2'), url('fonts/belgika-8th-webfont.woff') format('woff'), url('fonts/belgika-8th-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'belgika-light';
+  src: url('fonts/belgika-16th-webfont.eot');
+  src: url('fonts/belgika-16th-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/belgika-16th-webfont.woff2') format('woff2'), url('fonts/belgika-16th-webfont.woff') format('woff'), url('fonts/belgika-16th-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'belgika-thin';
+  src: url('fonts/belgika-40th-webfont.eot');
+  src: url('fonts/belgika-40th-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/belgika-40th-webfont.woff2') format('woff2'), url('fonts/belgika-40th-webfont.woff') format('woff'), url('fonts/belgika-40th-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/**** Variables ****/
+/**** Media queries ****/
+/**** Colors, margin, font-sizes etc. ****/
 .W100-margin {
   width: calc(100% - 2 * 24px);
   margin: 0 auto !important;
@@ -164,7 +193,7 @@ table {
 .font-small {
   font-size: 10pt;
 }
-/******** COLUMN SYSTEM ********/
+/**** Column system ****/
 .col1 {
   width: calc(((100% - 11 * 12px) / 12));
 }
@@ -214,19 +243,33 @@ body {
   float: left;
 }
 .section-header {
-  font-size: 14pt;
   width: 100vw;
   padding: 36px;
 }
+.section-header .text {
+  font-size: 14pt;
+  line-height: 130%;
+}
 .section-header .title {
   font-size: 48pt;
+  font-family: "belgika-thin";
 }
 .article {
-  font-size: 10pt;
   position: relative;
 }
 .article .job-title {
+  font-family: "belgika-regular";
   font-size: 18pt;
+}
+.article .job-infos {
+  font-size: 12pt;
+  line-height: 130%;
+}
+.article .job-footer {
+  font-family: "belgika-regular";
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .article .views-wrapper {
   width: 100%;
@@ -238,6 +281,7 @@ body {
 }
 .article .views-wrapper .view {
   display: inline-block;
+  padding-right: 24px;
 }
 .article .views-wrapper .view img {
   width: auto;
@@ -252,12 +296,10 @@ body {
   white-space: -o-pre-wrap;
   word-wrap: break-word;
   font-size: 9pt;
+  line-height: 130%;
 }
 .article .views-wrapper .view:last-child {
   width: calc(((100% - 11 * 12px) / 12) * 12 + (11 * 12px));
-}
-.article .job-infos {
-  position: relative;
 }
 @media only screen and (min-device-width: 1025px), (min-width: 1025px) {
   .section-header,
